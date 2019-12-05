@@ -332,10 +332,10 @@ def write_character(character) :
 
 	f.write("h3. Talents\n\n")
 	f.write("|_Rank 1_|_Rank 2_|_Rank 3_|_Rank 4_|_Rank 5_|\n")
-	f.write("|" + build_talent_block(character, 1) + "|")
-	f.write("|" + build_talent_block(character, 2) + "|")
-	f.write("|" + build_talent_block(character, 3) + "|")
-	f.write("|" + build_talent_block(character, 4) + "|")
+	f.write("|" + build_talent_block(character, 1))
+	f.write("|" + build_talent_block(character, 2))
+	f.write("|" + build_talent_block(character, 3))
+	f.write("|" + build_talent_block(character, 4))
 	f.write("|" + build_talent_block(character, 5) + "|")
 	f.write("\n\n")
 
