@@ -221,8 +221,9 @@ def calculate_skill(character, characteristics, skill) :
 
 	stat = characteristics[skills[skill]["characteristic"]]
 
-	if(skill in archetype["StartingSkills"]):
-		starting = archetype["StartingSkills"][skill]
+	if "StartingSkills" in archetype :
+		if(skill in archetype["StartingSkills"]) :
+			starting = archetype["StartingSkills"][skill]
 
 	if(skill in character["careerSkillsRank"]):
 		career = 1
@@ -255,7 +256,7 @@ def write_skill_block(file, character, characteristics, category) :
 	for key in keys :
 		skill = skills[key]
 		career = ""
-		if skill in character["careerSkillsRank"] :
+		if key in character["careerSkillsRank"] :
 			career = "Yes"
 		ranks, yellow, green = calculate_skill(character, characteristics, key)
 
