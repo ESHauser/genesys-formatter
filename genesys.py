@@ -250,7 +250,7 @@ def build_dice_pool(yellow, green) :
 	return result
 
 def write_skill_block(file, character, characteristics, category) :
-	keys = skills.keys()
+	keys = sorted(skills.keys())
 
 	for key in keys :
 		skill = skills[key]
