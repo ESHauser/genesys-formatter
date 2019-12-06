@@ -593,14 +593,14 @@ def write_character(character) :
 
 	f = open(character["name"] + ".txt", "w")
 
-	f.write("h2. Archetype\n\n")
+	f.write("h3. Archetype\n\n")
 	f.write(character["archetype"] + " " + character["career"] + "\n\n")
 
-	f.write("h2. Attributes\n\n")
+	f.write("h3. Attributes\n\n")
 	f.write("|_Wounds_|_Strain_|_Soak Value_|_Melee Defense_|_Ranged Defense_|\n")
 	f.write("|" + str(wounds) + "|" + str(strain) + "|" + str(soak) + "|" + str(meleeDefense) + "|" + str(rangedDefense) + "|\n\n")
 
-	f.write("h2. Characteristics\n\n")
+	f.write("h3. Characteristics\n\n")
 	f.write("|_Brawn_|_Agility_|_Intellect_|_Cunning_|_Willpower_|_Presence_|\n")
 	f.write("|" + str(characteristics["Brawn"]))
 	f.write("|" + str(characteristics["Agility"]))
