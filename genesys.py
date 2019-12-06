@@ -540,6 +540,7 @@ def write_weapon_block(file, character, characteristics) :
 			file.write("|" + w["damage"])
 			file.write("|" + w["crit"])
 			file.write("|" + w["skill"])
+			file.write("|" + w["range"])
 			file.write("|" + w["encum"])
 			file.write("|" + w["qualities"])
 			file.write("|" + build_dice_pool(yellow, green, blue, black) + "|\n")
