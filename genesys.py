@@ -18,9 +18,9 @@ archetypes = data.archetypes.archetypes
 
 
 
-def build_table_row(*theArgs):
-	strArgs = [""] + [str(x) for x in theArgs] + [""]
-	return "|".join(strArgs)
+def build_table_row(*args, **kwargs):
+	str_args = [""] + [str(x) for x in args] + [""]
+	return "|".join(str_args) + "\n" + kwargs.get("postfix", "")
 
 def calculate_skill(character, characteristics, skill) :
 	archetype = archetypes[character["archetype"]]
@@ -90,7 +90,7 @@ def write_skill_block(file, character, characteristics, category) :
 		ranks, yellow, green = calculate_skill(character, characteristics, key)
 
 		if(skill["category"] == category) :
-			row = build_table_row(key, career, ranks, build_dice_pool(yellow, green, 0, 0)) + "\n"
+			row = build_table_row(key, career, ranks, build_dice_pool(yellow, green, 0, 0))
 			file.write(row)
 
 def build_talent_block(character, rank) :
@@ -115,7 +115,7 @@ def write_weapon_block(file, character, characteristics) :
 			blue, black = calculate_weapon_quality(w)
 
 			row = build_table_row(w["name"], w["damage"], w["crit"], w["skill"], w["range"],
-				w["encum"], w["qualities"], build_dice_pool(yellow, green, blue, black)) + "\n"
+				w["encum"], w["qualities"], build_dice_pool(yellow, green, blue, black))
 			file.write(row)
 
 def write_armor_block(file, character) :
@@ -123,7 +123,7 @@ def write_armor_block(file, character) :
 		for ea in character["equipmentArmor"] :
 			a = armor[character["equipmentArmor"][ea]["id"]]
 
-			row = build_table_row(a["name"], a["soak"], a["meleeDefense"], a["rangedDefense"], a["encum"]) + "\n"
+			row = build_table_row(a["name"], a["soak"], a["meleeDefense"], a["rangedDefense"], a["encum"])
 			file.write(row)
 
 def calculate_soak(character) :
@@ -167,39 +167,39 @@ def write_character(character) :
 	f.write(character["archetype"] + " " + character["career"] + "\n\n")
 
 	f.write("h3. Attributes\n\n")
-	f.write(build_table_row("_Wounds_","_Strain_", "_Soak Value_","_Melee Defense_","_Ranged Defense_") + "\n")
-	f.write(build_table_row(wounds, strain, soak, meleeDefense, rangedDefense) + "\n\n")
+	f.write(build_table_row("_Wounds_","_Strain_", "_Soak Value_","_Melee Defense_","_Ranged Defense_"))
+	f.write(build_table_row(wounds, strain, soak, meleeDefense, rangedDefense, postfix="\n"))
 
 	f.write("h3. Characteristics\n\n")
-	f.write(build_table_row("_Brawn_", "_Agility_", "_Intellect_", "_Cunning_", "_Willpower_", "_Presence_") + "\n")
+	f.write(build_table_row("_Brawn_", "_Agility_", "_Intellect_", "_Cunning_", "_Willpower_", "_Presence_"))
 	f.write(build_table_row(characteristics["Brawn"], characteristics["Agility"], characteristics["Intellect"], 
-				characteristics["Cunning"], characteristics["Willpower"], characteristics["Presence"]) + "\n\n")
+				characteristics["Cunning"], characteristics["Willpower"], characteristics["Presence"], postfix="\n"))
 
 	f.write("h3. Skills\n\n")
-	f.write(build_table_row("_Skill_", "_Career_", "_Rank_", "_Dice Pool_") + "\n")
-	f.write("|\\4=.*General*|\n")
+	f.write(build_table_row("_Skill_", "_Career_", "_Rank_", "_Dice Pool_"))
+	f.write(build_table_row("\\4=.*General*"))
 	write_skill_block(f, character, characteristics, "General")
-	f.write("|\\4=.*Combat*|\n")
+	f.write(build_table_row("\\4=.*Combat*"))
 	write_skill_block(f, character, characteristics, "Combat")
-	f.write("|\\4=.*Social*|\n")
+	f.write(build_table_row("\\4=.*Social*"))
 	write_skill_block(f, character, characteristics, "Social")
-	f.write("|\\4=.*Magic*|\n")
+	f.write(build_table_row("\\4=.*Magic*"))
 	write_skill_block(f, character, characteristics, "Magic")
 	f.write("\n")
 
 	f.write("h3. Talents\n\n")
-	f.write(build_table_row("_Rank 1_", "_Rank 2_", "_Rank 3_", "_Rank 4_", "_Rank 5_") + "\n")
+	f.write(build_table_row("_Rank 1_", "_Rank 2_", "_Rank 3_", "_Rank 4_", "_Rank 5_") )
 	f.write(build_table_row(build_talent_block(character, 1), build_talent_block(character, 2),
 					build_talent_block(character, 3), build_talent_block(character, 4),
-					build_talent_block(character, 5)) + "\n\n")
+					build_talent_block(character, 5), postfix="\n"))
 
 	f.write("h3. Weapons\n\n")
-	f.write(build_table_row("_Weapon_", "_Dam_", "_Crit_", "_Range_", "_Skill_", "_Encum_", "_Qualities_", "_Dice Pool_") + "\n")
+	f.write(build_table_row("_Weapon_", "_Dam_", "_Crit_", "_Range_", "_Skill_", "_Encum_", "_Qualities_", "_Dice Pool_"))
 	write_weapon_block(f, character, characteristics)
 	f.write("\n\n")
 
 	f.write("h3. Armor\n\n")
-	f.write(build_table_row("_Armor_", "_Soak_", "_Melee Def_", "_Ranged Def_", "_Encum_") + "\n")
+	f.write(build_table_row("_Armor_", "_Soak_", "_Melee Def_", "_Ranged Def_", "_Encum_"))
 	write_armor_block(f, character)
 
 	f.close()
