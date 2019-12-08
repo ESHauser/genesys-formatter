@@ -314,6 +314,10 @@ weapons = {
 	}
 }
 
+def build_table_row(*theArgs):
+	strArgs = [""] + [str(x) for x in theArgs] + [""]
+	return "|".join(strArgs)
+
 def calculate_skill(character, characteristics, skill) :
 	archetype = archetypes[character["archetype"]]
 
@@ -336,7 +340,8 @@ def calculate_skill(character, characteristics, skill) :
 
 	if("masterSkills" in character) :
 		if(skill in character["masterSkills"]):
-			training = character["masterSkills"][skill]["rank"]
+			training += character["masterSkills"][skill].get("rank", 0)
+			training += character["masterSkills"][skill].get("careerRank", 0)
 
 	ranks = starting + career + special + training
 
@@ -381,10 +386,8 @@ def write_skill_block(file, character, characteristics, category) :
 		ranks, yellow, green = calculate_skill(character, characteristics, key)
 
 		if(skill["category"] == category) :
-			file.write("|" + key)
-			file.write("|" + career)
-			file.write("|" + str(ranks))
-			file.write("|" + build_dice_pool(yellow, green, 0, 0) + "|\n")
+			row = build_table_row(key, career, ranks, build_dice_pool(yellow, green, 0, 0)) + "\n"
+			file.write(row)
 
 def build_talent_block(character, rank) :
 	talents = []
@@ -407,25 +410,17 @@ def write_weapon_block(file, character, characteristics) :
 			ranks, yellow, green = calculate_skill(character, characteristics, w["skill"])
 			blue, black = calculate_weapon_quality(w)
 
-			file.write("|" + w["name"])
-			file.write("|" + w["damage"])
-			file.write("|" + w["crit"])
-			file.write("|" + w["skill"])
-			file.write("|" + w["range"])
-			file.write("|" + w["encum"])
-			file.write("|" + w["qualities"])
-			file.write("|" + build_dice_pool(yellow, green, blue, black) + "|\n")
+			row = build_table_row(w["name"], w["damage"], w["crit"], w["skill"], w["range"],
+				w["encum"], w["qualities"], build_dice_pool(yellow, green, blue, black)) + "\n"
+			file.write(row)
 
 def write_armor_block(file, character) :
 	if "equipmentArmor" in character :
 		for ea in character["equipmentArmor"] :
 			a = armor[character["equipmentArmor"][ea]["id"]]
 
-			file.write("|" + a["name"])
-			file.write("|" + str(a["soak"]))
-			file.write("|" + str(a["meleeDefense"]))
-			file.write("|" + str(a["rangedDefense"]))
-			file.write("|" + str(a["encum"]) + "|\n")
+			row = build_table_row(a["name"], a["soak"], a["meleeDefense"], a["rangedDefense"], a["encum"]) + "\n"
+			file.write(row)
 
 def calculate_soak(character) :
 	if "equipmentArmor" in character :
@@ -468,21 +463,16 @@ def write_character(character) :
 	f.write(character["archetype"] + " " + character["career"] + "\n\n")
 
 	f.write("h3. Attributes\n\n")
-	f.write("|_Wounds_|_Strain_|_Soak Value_|_Melee Defense_|_Ranged Defense_|\n")
-	f.write("|" + str(wounds) + "|" + str(strain) + "|" + str(soak) + "|" + str(meleeDefense) + "|" + str(rangedDefense) + "|\n\n")
+	f.write(build_table_row("_Wounds_","_Strain_", "_Soak Value_","_Melee Defense_","_Ranged Defense_") + "\n")
+	f.write(build_table_row(wounds, strain, soak, meleeDefense, rangedDefense) + "\n\n")
 
 	f.write("h3. Characteristics\n\n")
-	f.write("|_Brawn_|_Agility_|_Intellect_|_Cunning_|_Willpower_|_Presence_|\n")
-	f.write("|" + str(characteristics["Brawn"]))
-	f.write("|" + str(characteristics["Agility"]))
-	f.write("|" + str(characteristics["Intellect"]))
-	f.write("|" + str(characteristics["Cunning"]))
-	f.write("|" + str(characteristics["Willpower"]))
-	f.write("|" + str(characteristics["Presence"]) + "|")
-	f.write("\n\n")
+	f.write(build_table_row("_Brawn_", "_Agility_", "_Intellect_", "_Cunning_", "_Willpower_", "_Presence_") + "\n")
+	f.write(build_table_row(characteristics["Brawn"], characteristics["Agility"], characteristics["Intellect"], 
+				characteristics["Cunning"], characteristics["Willpower"], characteristics["Presence"]) + "\n\n")
 
 	f.write("h3. Skills\n\n")
-	f.write("|_Skill_|_Career_|_Rank_|_Dice Pool_|\n")
+	f.write(build_table_row("_Skill_", "_Career_", "_Rank_", "_Dice Pool_") + "\n")
 	f.write("|\\4=.*General*|\n")
 	write_skill_block(f, character, characteristics, "General")
 	f.write("|\\4=.*Combat*|\n")
@@ -494,21 +484,18 @@ def write_character(character) :
 	f.write("\n")
 
 	f.write("h3. Talents\n\n")
-	f.write("|_Rank 1_|_Rank 2_|_Rank 3_|_Rank 4_|_Rank 5_|\n")
-	f.write("|" + build_talent_block(character, 1))
-	f.write("|" + build_talent_block(character, 2))
-	f.write("|" + build_talent_block(character, 3))
-	f.write("|" + build_talent_block(character, 4))
-	f.write("|" + build_talent_block(character, 5) + "|")
-	f.write("\n\n")
+	f.write(build_table_row("_Rank 1_", "_Rank 2_", "_Rank 3_", "_Rank 4_", "_Rank 5_") + "\n")
+	f.write(build_table_row(build_talent_block(character, 1), build_talent_block(character, 2),
+					build_talent_block(character, 3), build_talent_block(character, 4),
+					build_talent_block(character, 5)) + "\n\n")
 
 	f.write("h3. Weapons\n\n")
-	f.write("|_Weapon_|_Dam_|_Crit_|_Range_|_Skill_|_Encum_|_Qualities_|_Dice Pool_|\n")
+	f.write(build_table_row("_Weapon_", "_Dam_", "_Crit_", "_Range_", "_Skill_", "_Encum_", "_Qualities_", "_Dice Pool_") + "\n")
 	write_weapon_block(f, character, characteristics)
 	f.write("\n\n")
 
 	f.write("h3. Armor\n\n")
-	f.write("|_Armor_|_Soak_|_Melee Def_|_Ranged Def_|_Encum_|\n")
+	f.write(build_table_row("_Armor_", "_Soak_", "_Melee Def_", "_Ranged Def_", "_Encum_") + "\n")
 	write_armor_block(f, character)
 
 	f.close()
