@@ -15,9 +15,6 @@ weapons = data.weapons.weapons
 armor = data.armor.armor
 archetypes = data.archetypes.archetypes
 
-
-
-
 def build_table_row(*args, **kwargs):
 	str_args = [""] + [str(x) for x in args] + [""]
 	return "|".join(str_args) + "\n" + kwargs.get("postfix", "")
@@ -93,18 +90,24 @@ def write_skill_block(file, character, characteristics, category) :
 			row = build_table_row(key, career, ranks, build_dice_pool(yellow, green, 0, 0))
 			file.write(row)
 
-def build_talent_block(character, rank) :
-	talents = []
-	result = ", "
+def build_talent_block(talent, rank) :
+	return "|" + talent
 
+def write_talent_row(file, character, row) :
 	if "masterTalents" in character :
-		for row in character["masterTalents"] :
-			if str(rank) in character["masterTalents"][row] :
-				talent = character["masterTalents"][row][str(rank)]
-				if len(talent) > 0 :
-					talents.append(talent)
+		if str(row) in character["masterTalents"] :
+			section = character["masterTalents"][str(row)]
+			for rank in range(1, 6) :
+				if str(rank) in section :
+					talent = section[str(rank)]
+					if(len(talent) > 0) :
+						file.write(build_talent_block(talent, rank))
+					else :
+						file.write("|")
+				else :
+					file.write("|")
+		file.write("|\n")
 
-	return result.join(talents)
 
 def write_weapon_block(file, character, characteristics) :
 	if "equipmentWeapons" in character :
@@ -156,6 +159,10 @@ def write_character(character) :
 		"Presence" : archetype["StartingStats"]["Presence"] + creationCharacteristics["Presence"]
 	}
 
+	talentRows = 0
+	if "masterTalents" in character :
+		talentRows = len(character["masterTalents"].keys()) - 1
+
 	wounds = archetype["WoundThreshold"] + characteristics["Brawn"]
 	strain = archetype["StrainThreshold"] + characteristics["Willpower"]
 	soak = characteristics["Brawn"] + calculate_soak(character)
@@ -189,9 +196,8 @@ def write_character(character) :
 
 	f.write("h3. Talents\n\n")
 	f.write(build_table_row("_Rank 1_", "_Rank 2_", "_Rank 3_", "_Rank 4_", "_Rank 5_") )
-	f.write(build_table_row(build_talent_block(character, 1), build_talent_block(character, 2),
-					build_talent_block(character, 3), build_talent_block(character, 4),
-					build_talent_block(character, 5), postfix="\n"))
+	for row in range(1, talentRows + 1) :
+		write_talent_row(f, character, row)
 
 	f.write("h3. Weapons\n\n")
 	f.write(build_table_row("_Weapon_", "_Dam_", "_Crit_", "_Range_", "_Skill_", "_Encum_", "_Qualities_", "_Dice Pool_"))
