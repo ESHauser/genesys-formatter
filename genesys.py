@@ -192,7 +192,7 @@ def write_armor_block(file, character) :
 		for ea in character["equipmentArmor"] :
 			a = armor[character["equipmentArmor"][ea]["id"]]
 
-			row = build_table_row(a["name"], a["soak"], a["meleeDefense"], a["rangedDefense"], a["encum"])
+			row = build_table_row(a["name"], a["soak"], a["defense"], a["encum"])
 			file.write(row)
 
 def calculate_soak(character) :
@@ -207,9 +207,9 @@ def calculate_defense(character) :
 	if "equipmentArmor" in character :
 		for a in character["equipmentArmor"] :
 			if character["equipmentArmor"][a]["equipped"] :
-				return armor[character["equipmentArmor"][a]["id"]]["meleeDefense"], armor[character["equipmentArmor"][a]["id"]]["rangedDefense"]
+				return armor[character["equipmentArmor"][a]["id"]]["defense"]
 
-	return 0, 0
+	return 0
 
 def write_character(character) :
 	print(character["name"])
@@ -228,7 +228,7 @@ def write_character(character) :
 	wounds = archetype["WoundThreshold"] + characteristics["Brawn"]
 	strain = archetype["StrainThreshold"] + characteristics["Willpower"]
 	soak = characteristics["Brawn"] + calculate_soak(character)
-	meleeDefense, rangedDefense = calculate_defense(character)
+	defense = calculate_defense(character)
 
 	f = open(character["name"] + ".txt", "w")
 
@@ -237,8 +237,8 @@ def write_character(character) :
 	write_archetype_table(f, character["archetype"])
 
 	f.write("h3. Attributes\n\n")
-	f.write(build_table_row("_Wounds_","_Strain_", "_Soak Value_","_Melee Defense_","_Ranged Defense_"))
-	f.write(build_table_row(wounds, strain, soak, meleeDefense, rangedDefense, postfix="\n"))
+	f.write(build_table_row("_Wounds_","_Strain_", "_Soak Value_","_Defense_"))
+	f.write(build_table_row(wounds, strain, soak, defense, postfix="\n"))
 
 	f.write("h3. Characteristics\n\n")
 	f.write(build_table_row("_Brawn_", "_Agility_", "_Intellect_", "_Cunning_", "_Willpower_", "_Presence_"))
@@ -266,7 +266,7 @@ def write_character(character) :
 	f.write("\n\n")
 
 	f.write("h3. Armor\n\n")
-	f.write(build_table_row("_Armor_", "_Soak_", "_Melee Def_", "_Ranged Def_", "_Encum_"))
+	f.write(build_table_row("_Armor_", "_Soak_", "_Defense_", "_Encum_"))
 	write_armor_block(f, character)
 
 	f.close()
