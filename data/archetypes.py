@@ -9,7 +9,7 @@ archetypes = {
 			"Presence" : 2
 		},
 		"StartingTalents" : {
-			"Ready for Anything"
+			"ReadyForAnything"
 		},
 		"WoundThreshold" : 10,
 		"StrainThreshold" : 10
@@ -27,7 +27,7 @@ archetypes = {
 			"Athletics" : 1
 		},
 		"StartingTalents" : {
-			"Tough as Nails"
+			"ToughAsNails"
 		}
 		,
 		"WoundThreshold" : 12,
@@ -64,7 +64,7 @@ archetypes = {
 			"Cool" : 1
 		},
 		"StartingTalents" : {
-			"Forceful Personality"
+			"ForcefulPersonality"
 		},
 		"WoundThreshold" : 10,
 		"StrainThreshold" : 10

@@ -4,16 +4,21 @@ import data.skills
 import data.weapons
 import data.armor
 import data.archetypes
+import data.talents
 
 yellowImage = "<img class=\"genesys-die-type-proficiency\" />"
 greenImage = "<img class=\"genesys-die-type-ability\" />"
 blueImage = "<img class=\"genesys-die-type-boost\" />"
 blackImage = "<img class=\"genesys-die-type-setback\" />"
+successImage = "<img class=\"genesys-die-result-success\" />"
+failureImage = "<img class=\"genesys-die-result-failure\" />"
+advantageImage = "<img class=\"genesys-die-result-advantage\" />"
 
 skills = data.skills.getFlattenedSkills()
 weapons = data.weapons.weapons
 armor = data.armor.armor
 archetypes = data.archetypes.archetypes
+talents = data.talents.talents
 
 def build_table_row(*args, **kwargs):
 	str_args = [""] + [str(x) for x in args] + [""]
@@ -90,24 +95,84 @@ def write_skill_block(file, character, characteristics, category) :
 			row = build_table_row(key, career, ranks, build_dice_pool(yellow, green, 0, 0))
 			file.write(row)
 
-def build_talent_block(talent, rank) :
-	return "|" + talent
+def apply_tags(text) :
+	result = text.replace("[BOOST]", blueImage)
+	result = result.replace("[SETBACK]", blackImage)
+	result = result.replace("[SUCCESS]", successImage)
+	result = result.replace("[FAILURE]", failureImage)
+	result = result.replace("[ADVANTAGE]", advantageImage)
+	return result
+
+def write_talent_block(file, talent) :
+
+	if talent in talents :
+		t = talents[talent]
+	else :
+		t = {
+			"name" : talent,
+			"activation" : "?",
+			"ranked" : "?",
+			"description" : "Talent not found"
+		}
+
+	file.write("<td style=\"vertical-align: top; border: 2px solid #f9f9f9; border-radius: 10px; padding: 0;\">")
+	file.write("<div>")
+
+	# talent name
+	file.write("<div style=\"background-color: #f9f9f9; margin-bottom: 0;\">")
+	file.write("<p style=\"margin-bottom: 0; padding: 4px;\">" + t["name"] + "</p>")
+	file.write("</div>")
+
+	# talent details
+	file.write("<div style=\"background-color: #ffffff; margin-top: 0;\">")
+	file.write("<p style=\"padding: 4px;\">")
+	file.write("<b>Activation:</b> " + t["activation"] + "<br>")
+	file.write("<b>Ranked:</b> " + t["ranked"] + "<br>")
+	file.write(apply_tags(t["description"]))
+	file.write("</p>")
+	file.write("</div>")
+
+	file.write("</div>")
+	file.write("</td>")
 
 def write_talent_row(file, character, row) :
 	if "masterTalents" in character :
 		if str(row) in character["masterTalents"] :
+			file.write("<tr style=\"background-color: transparent;\">")
 			section = character["masterTalents"][str(row)]
 			for rank in range(1, 6) :
 				if str(rank) in section :
 					talent = section[str(rank)]
 					if(len(talent) > 0) :
-						file.write(build_talent_block(talent, rank))
-					else :
-						file.write("|")
-				else :
-					file.write("|")
-		file.write("|\n")
+						write_talent_block(file, talent)
 
+			file.write("</tr>")
+
+def write_talent_table(file, character) :
+
+	talentRows = 0
+	if "masterTalents" in character :
+		talentRows = len(character["masterTalents"].keys())
+
+	file.write("<table>")
+	file.write("<tr>")
+	for rank in range(1, 6) :
+		file.write("<td style=\"width: 20%;\"><em>Rank " + str(rank) + "</em></td>")
+	file.write("</tr>")
+
+	for row in range(1, talentRows) :
+		write_talent_row(file, character, row)
+	
+	file.write("</table>\n\n")
+
+def write_archetype_table(file, archetype) :
+	a = archetypes[archetype]
+	file.write("<table>")
+	file.write("<tr style=\"background-color: transparent;\">")
+	for talent in a["StartingTalents"] :
+		write_talent_block(file, talent)
+	file.write("</tr>")	
+	file.write("</table>\n\n")
 
 def write_weapon_block(file, character, characteristics) :
 	if "equipmentWeapons" in character :
@@ -159,10 +224,6 @@ def write_character(character) :
 		"Presence" : archetype["StartingStats"]["Presence"] + creationCharacteristics["Presence"]
 	}
 
-	talentRows = 0
-	if "masterTalents" in character :
-		talentRows = len(character["masterTalents"].keys()) - 1
-
 	wounds = archetype["WoundThreshold"] + characteristics["Brawn"]
 	strain = archetype["StrainThreshold"] + characteristics["Willpower"]
 	soak = characteristics["Brawn"] + calculate_soak(character)
@@ -171,7 +232,8 @@ def write_character(character) :
 	f = open(character["name"] + ".txt", "w")
 
 	f.write("h3. Archetype\n\n")
-	f.write(character["archetype"] + " " + character["career"] + "\n\n")
+	f.write(character["archetype"] + " " + character["career"] + "\n")
+	write_archetype_table(f, character["archetype"])
 
 	f.write("h3. Attributes\n\n")
 	f.write(build_table_row("_Wounds_","_Strain_", "_Soak Value_","_Melee Defense_","_Ranged Defense_"))
@@ -195,12 +257,10 @@ def write_character(character) :
 	f.write("\n")
 
 	f.write("h3. Talents\n\n")
-	f.write(build_table_row("_Rank 1_", "_Rank 2_", "_Rank 3_", "_Rank 4_", "_Rank 5_") )
-	for row in range(1, talentRows + 1) :
-		write_talent_row(f, character, row)
+	write_talent_table(f, character)
 
 	f.write("h3. Weapons\n\n")
-	f.write(build_table_row("_Weapon_", "_Dam_", "_Crit_", "_Range_", "_Skill_", "_Encum_", "_Qualities_", "_Dice Pool_"))
+	f.write(build_table_row("_Weapon_", "_Dam_", "_Crit_", "_Skill_", "_Range_", "_Encum_", "_Qualities_", "_Dice Pool_"))
 	write_weapon_block(f, character, characteristics)
 	f.write("\n\n")
 
