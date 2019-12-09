@@ -13,6 +13,7 @@ blackImage = "<img class=\"genesys-die-type-setback\" />"
 successImage = "<img class=\"genesys-die-result-success\" />"
 failureImage = "<img class=\"genesys-die-result-failure\" />"
 advantageImage = "<img class=\"genesys-die-result-advantage\" />"
+difficultyImage = "<img class=\"genesys-die-type-difficulty\" />"
 
 skills = data.skills.getFlattenedSkills()
 weapons = data.weapons.weapons
@@ -102,6 +103,7 @@ def apply_tags(text) :
 	result = result.replace("[SUCCESS]", successImage)
 	result = result.replace("[FAILURE]", failureImage)
 	result = result.replace("[ADVANTAGE]", advantageImage)
+	result = result.replace("[DIFFICULTY]", difficultyImage)
 	return result
 
 def write_talent_block(file, talent) :

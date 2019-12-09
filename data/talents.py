@@ -53,7 +53,7 @@ talents = {
         "activation" : "Passive",
         "ranked" : "No",
         "wiki" : "[[Defensive Sysops]]",
-        "description" : "Add [SETBACK] [SETBACK] to opponent when defending computer system against intrusion."
+        "description" : "Add [SETBACK][SETBACK] to opponent when defending computer system against intrusion."
     },
     "DesperateRecovery" : {
         "name" : "Desperate Recovery",
@@ -77,7 +77,7 @@ talents = {
         "activation" : "Passive",
         "ranked" : "No",
         "wiki" : "[[Forager]]",
-        "description" : "Remove [SETBACK] [SETBACK] from any skill checks to find food, water, or shelter."
+        "description" : "Remove [SETBACK][SETBACK] from any skill checks to find food, water, or shelter."
     },
     "Grit" : {
         "name" : "Grit",
@@ -109,7 +109,7 @@ talents = {
         "activation" : "Passive",
         "ranked" : "Yes",
         "wiki" : "[[Knack for It]]",
-        "description" : "Remove [SETBACK] [SETBACK] from all checks made with associated skill."
+        "description" : "Remove [SETBACK][SETBACK] from all checks made with associated skill."
     },
     "KnowSomebody" : {
         "name" : "Know Somebody",
@@ -214,5 +214,125 @@ talents = {
         "ranked" : "No",
         "wiki" : "[[Unremarkable]]",
         "description" : "Other characters add [FAILURE] to any checks made to find or identify character in a crowd."
+    },
+    "BasicMilitaryTraining" : {
+        "name" : "Basic Military Training",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked" : "No",
+        "wiki" : "[[Basic Military Training]]",
+        "description" : "Athletics, Ranged (Heavy), and Resilience are now career skills."
+    },
+    "Berserk" : {
+        "name" : "Berserk",
+        "tier" : "2",
+        "activation" : "Active (Manuever)",
+        "ranked" : "No",
+        "wiki" : "[[Berserk]]",
+        "description" : "Once per encounter, add [SUCCESS][ADVANTAGE][ADVANTAGE] to melee checks.  Opponents add [SUCCESS] to combat checks."
+    },
+    "CoordinatedAssault" : {
+        "name" : "Coordinated Assault",
+        "tier" : "2",
+        "activation" : "Active (Manuever)",
+        "ranked" : "Yes",
+        "wiki" : "[[Coordinated Assault]]",
+        "description" : "Once per turn, add [ADVANTAGE] to engaged ally combat checks equal to Leadership ranks."
+    },
+    "Counteroffer" : {
+        "name" : "Counteroffer",
+        "tier" : "2",
+        "activation" : "Active (Action)",
+        "ranked" : "No",
+        "wiki" : "[[Counteroffer]]",
+        "description" : "Once per session, make opposed Negotiation vs Discipline to stagger opponent until end of their next turn."
+    },
+    "DaringAviator" : {
+        "name" : "Daring Aviator",
+        "tier" : "2",
+        "activation" : "Active (Incidental)",
+        "ranked" : "Yes",
+        "wiki" : "[[Daring Aviator]]",
+        "description" : "Before driving or pilot check, add [SETBACK] to result to add equal number of [SUCCESS] up to ranks in this talent."
+    },
+    "DefensiveStance" : {
+        "name" : "Defensive Stance",
+        "tier" : "2",
+        "activation" : "Active (Manuever)",
+        "ranked" : "Yes",
+        "wiki" : "[[Defensive Stance]]",
+        "description" : "Once per round, suffer strain up to ranks in this talent to upgrade difficulty of melee checks against character by equal amount."
+    },
+    "DefensiveSysopsImproved" : {
+        "name" : "Defensive Sysops (Improved)",
+        "tier" : "2",
+        "activation" : "Active (Incidental)",
+        "ranked" : "No",
+        "wiki" : "[[Defensive Sysops (Improved)]]",
+        "description" : "Add [FAILURE][THREAT] to opponent when defending computer system against intrusion instead of [SETBACK][SETBACK]."
+    },
+    "DualWielder" : {
+        "name" : "Dual Wielder",
+        "tier" : "2",
+        "activation" : "Active (Manuever)",
+        "ranked" : "No",
+        "wiki" : "[[Dual Wielder]]",
+        "description" : "Decrease difficulty of next combined combat check by one."
+    },
+    "FanTheHammer" : {
+        "name" : "Fan the Hammer",
+        "tier" : "2",
+        "activation" : "Active (Incidental)",
+        "ranked" : "No",
+        "wiki" : "[[Fan the Hammer]]",
+        "description" : "Once per encounter, add Auto-fire quality to pistol.  Weapon runs out of ammo."
+    },
+    "HeightenedAwareness" : {
+        "name" : "Heightened Awareness",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked" : "No",
+        "wiki" : "[[Heightened Awareness]]",
+        "description" : "Enganged allies add [BOOST][BOOST] to Percention and Vigilance.  Short range allies add [BOOST]."
+    },
+    "InspiringRhetoric" : {
+        "name" : "Inspiring Rhetoric",
+        "tier" : "2",
+        "activation" : "Active (Action)",
+        "ranked" : "No",
+        "wiki" : "[[Inspiring Rhetoric]]",
+        "description" : "Make [DIFFICULTY][DIFFICULTY] Leadership check.  Each [SUCCESS] heals one ally one strain.  Each [ADVANTAGE] heals an additional strain."
+    },
+    "Inventor" : {
+        "name" : "Inventor",
+        "tier" : "2",
+        "activation" : "Active (Incidental)",
+        "ranked" : "Yes",
+        "wiki" : "[[Inventor]]",
+        "description" : "Add [BOOST] to checks made to construct or modify items up to ranks in this talent."
+    },
+    "LuckyStrike" : {
+        "name" : "Lucky Strike",
+        "tier" : "2",
+        "activation" : "Active (Incidental)",
+        "ranked" : "No",
+        "wiki" : "[[Lucky Strike]]",
+        "description" : "After successful combat check, spend Story Point to add chosen characterist ranks to damage."
+    },
+    "ScathingTirad" : {
+        "name" : "Scathing Tirade",
+        "tier" : "2",
+        "activation" : "Active (Action)",
+        "ranked" : "No",
+        "wiki" : "[[Scathing Tirade]]",
+        "description" : "Make [DIFFICULTY][DIFFICULTY] Coercion check.  Each [SUCCESS] inflicts one enemy one strain.  Each [ADVANTAGE] inflicts an additional strain."
+    },
+    "SideStep" : {
+        "name" : "Side Step",
+        "tier" : "2",
+        "activation" : "Active (Action)",
+        "ranked" : "Yes",
+        "wiki" : "[[Side Step]]",
+        "description" : "Once per round, suffer strain up to ranks in talent to increase difficulty of all ranged conmbat checks until end of next turn."
     }
 }
