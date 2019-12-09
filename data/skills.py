@@ -1,5 +1,15 @@
 
 # [characteristis][category] = <list of skills>
+
+abbr = {
+    "Intellect" : "INT",
+    "Brawn" : "BR",
+    "Presence" : "PR",
+    "Agility" : "AG",
+    "Willpower" : "WILL",
+    "Cunning" : "CUN"
+}
+
 compressedSkills = {
     "Intellect": {
         "General": ['Alchemy', 'Computers', 'Medicine', 'Mechanics', 'Operating', 'Knowledge'],   
@@ -37,4 +47,5 @@ def getFlattenedSkills():
                 skills[z] = {}
                 skills[z]["category"] = y
                 skills[z]["characteristic"] = x
+                skills[z]["wiki"] = "[[" + z + " (" + abbr[x] + ")]]"
     return skills

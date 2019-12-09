@@ -78,7 +78,7 @@ def build_dice_pool(yellow, green, blue, black) :
 	for u in range(blue) :
 		result = result + blueImage
 	for b in range(black) :
-		result = result + blackImage		
+		result = result + blackImage
 	return result
 
 def write_skill_block(file, character, characteristics, category) :
@@ -90,9 +90,10 @@ def write_skill_block(file, character, characteristics, category) :
 		if key in character["careerSkillsRank"] :
 			career = "Yes"
 		ranks, yellow, green = calculate_skill(character, characteristics, key)
+		wiki = skill["wiki"]
 
 		if(skill["category"] == category) :
-			row = build_table_row(key, career, ranks, build_dice_pool(yellow, green, 0, 0))
+			row = build_table_row(wiki, career, ranks, build_dice_pool(yellow, green, 0, 0))
 			file.write(row)
 
 def apply_tags(text) :
@@ -120,7 +121,7 @@ def write_talent_block(file, talent) :
 
 	# talent name
 	file.write("<div style=\"background-color: #f9f9f9; margin-bottom: 0;\">")
-	file.write("<p style=\"margin-bottom: 0; padding: 4px;\">" + t["name"] + "</p>")
+	file.write("<p style=\"margin-bottom: 0; padding: 4px;\">" + t["wiki"] + "</p>")
 	file.write("</div>")
 
 	# talent details
@@ -162,7 +163,7 @@ def write_talent_table(file, character) :
 
 	for row in range(1, talentRows) :
 		write_talent_row(file, character, row)
-	
+
 	file.write("</table>\n\n")
 
 def write_archetype_table(file, archetype) :
