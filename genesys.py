@@ -121,7 +121,7 @@ def write_talent_block(file, talent) :
 
 	# talent name
 	file.write("<div style=\"background-color: #f9f9f9; margin-bottom: 0;\">")
-	file.write("<p style=\"margin-bottom: 0; padding: 4px;\">" + t["wiki"] + "</p>")
+	file.write("<p style=\"margin-bottom: 0; padding: 4px;\"><b>" + t["wiki"] + "</b></p>")
 	file.write("</div>")
 
 	# talent details
