@@ -25,7 +25,7 @@ compressedSkills = {
     },
     "Agility": {
         "General": ['Coordination', 'Driving', 'Piloting', 'Stealth'],
-        "Combat": ['Gunnery', 'Ranged (Heavy)', 'Ranged (Light)']
+        "Combat": ['Gunnery', 'RangedHeavy', 'RangedLight']
     },
     "Willpower": {
         "General": ['Discipline', 'Vigilance'],

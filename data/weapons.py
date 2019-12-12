@@ -13,7 +13,7 @@ weapons = {
 		"damage" : "9",
 		"crit" : "2",
 		"range" : "Extreme",
-		"skill" : "Ranged (Heavy)",
+		"skill" : "RangedHeavy",
 		"encum" : "4",
 		"qualities" : "Accurate 2, Limited Ammo 4, Pierce 2"
 	},
@@ -22,7 +22,7 @@ weapons = {
 		"damage" : "8",
 		"crit" : "3",
 		"range" : "Long",
-		"skill" : "Ranged (Heavy)",
+		"skill" : "RangedHeavy",
 		"encum" : "4",
 		"qualities" : "Accurate 1"
 	},
@@ -31,7 +31,7 @@ weapons = {
 		"damage" : "8",
 		"crit" : "3",
 		"range" : "Long",
-		"skill" : "Ranged (Heavy)",
+		"skill" : "RangedHeavy",
 		"encum" : "4",
 		"qualities" : "Accurate 1, Limited Ammo 2"
 	},
@@ -58,7 +58,7 @@ weapons = {
 		"damage" : "7",
 		"crit" : "3",
 		"range" : "Medium",
-		"skill" : "Ranged (Heavy)",
+		"skill" : "RangedHeavy",
 		"encum" : "3",
 		"qualities" : "Accurate 1, Auto-Fire"
 	},
@@ -67,7 +67,7 @@ weapons = {
 		"damage" : "4",
 		"crit" : "2",
 		"range" : "Medium",
-		"skill" : "Ranged (Light)",
+		"skill" : "RangedLight",
 		"encum" : "1",
 		"qualities" : "Pierce 2, Vicious 2"
 	},
@@ -76,7 +76,7 @@ weapons = {
 		"damage" : "6",
 		"crit" : "3",
 		"range" : "Medium",
-		"skill" : "Ranged (Light)",
+		"skill" : "RangedLight",
 		"encum" : "1",
 		"qualities" : ""
 	},
@@ -85,7 +85,7 @@ weapons = {
 		"damage" : "6",
 		"crit" : "3",
 		"range" : "Medium",
-		"skill" : "Ranged (Light)",
+		"skill" : "RangedLight",
 		"encum" : "1",
 		"qualities" : ""
 	},
@@ -103,7 +103,7 @@ weapons = {
 		"damage" : "3",
 		"crit" : "2",
 		"range" : "Medium",
-		"skill" : "Ranged (Light)",
+		"skill" : "RangedLight",
 		"encum" : "2",
 		"qualities" : "Auto-Fire , Pierce 2, Vicious 2"
 	},
@@ -112,7 +112,7 @@ weapons = {
 		"damage" : "5",
 		"crit" : "4",
 		"range" : "Short",
-		"skill" : "Ranged (Light)",
+		"skill" : "RangedLight",
 		"encum" : "1",
 		"qualities" : ""
 	},
@@ -121,7 +121,7 @@ weapons = {
 		"damage" : "8",
 		"crit" : "3",
 		"range" : "Long",
-		"skill" : "Ranged (Heavy)",
+		"skill" : "RangedHeavy",
 		"encum" : "4",
 		"qualities" : "Auto-Fire"
 	},
@@ -130,7 +130,7 @@ weapons = {
 		"damage" : "8",
 		"crit" : "3",
 		"range" : "Short",
-		"skill" : "Ranged (Heavy)",
+		"skill" : "RangedHeavy",
 		"encum" : "4",
 		"qualities" : "Auto-Fire , Blast 5, Inaccurate 1, Vicious 2"
 	},
@@ -139,7 +139,7 @@ weapons = {
 		"damage" : "6",
 		"crit" : "4",
 		"range" : "Medium",
-		"skill" : "Ranged (Light)",
+		"skill" : "RangedLight",
 		"encum" : "2",
 		"qualities" : "Accurate 1"
 	},
@@ -148,7 +148,7 @@ weapons = {
 		"damage" : "8",
 		"crit" : "3",
 		"range" : "Short",
-		"skill" : "Ranged (Heavy)",
+		"skill" : "RangedHeavy",
 		"encum" : "3",
 		"qualities" : "Blast 5, Knockdown , Vicious 2"
 	},
@@ -157,7 +157,7 @@ weapons = {
 		"damage" : "11",
 		"crit" : "3",
 		"range" : "Long",
-		"skill" : "Ranged (Heavy)",
+		"skill" : "RangedHeavy",
 		"encum" : "7",
 		"qualities" : "Auto-Fire , Cumbersome 4, Prepare 1"
 	},
@@ -166,7 +166,7 @@ weapons = {
 		"damage" : "7",
 		"crit" : "3",
 		"range" : "Medium",
-		"skill" : "Ranged (Light)",
+		"skill" : "RangedLight",
 		"encum" : "1",
 		"qualities" : "Inaccurate 1, Knockdown , Limited Ammo 2, Prepare 1"
 	},
@@ -175,7 +175,7 @@ weapons = {
 		"damage" : "4",
 		"crit" : "2",
 		"range" : "Medium",
-		"skill" : "Ranged (Heavy)",
+		"skill" : "RangedHeavy",
 		"encum" : "3",
 		"qualities" : "Blast 4, Pierce 2, Vicious 3"
 	},
