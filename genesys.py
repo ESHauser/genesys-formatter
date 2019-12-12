@@ -283,6 +283,7 @@ def write_character(character) :
 	f.write("h3. Armor\n\n")
 	f.write(build_table_row("_Armor_", "_Soak_", "_Defense_", "_Encum_"))
 	write_armor_block(f, character)
+	f.write("\n\n")
 
 	write_vital_stats(f, character["description"])
 	f.write("\n\n")
