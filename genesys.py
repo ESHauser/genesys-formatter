@@ -97,6 +97,18 @@ def write_skill_block(file, character, characteristics, category) :
 			row = build_table_row(wiki, career, ranks, build_dice_pool(yellow, green, 0, 0))
 			file.write(row)
 
+def write_vital_stats(file, description):
+	d = description
+	file.write("h3. Vital Statistics\n\n")
+	file.write(build_table_row("_Age_", "_Gender_", "_Height", "_Build_", "_Eyes_", "_Hair_"))
+	file.write(build_table_row(
+		d.get("age", "Unknown"),
+		d.get("gender", "Unknown"),
+		d.get("height", "Unknown"),
+		d.get("build", "Unknown"),
+		d.get("eyes", "Unknown"),
+		d.get("hair", "Unknown")))
+
 def apply_tags(text) :
 	result = text.replace("[BOOST]", blueImage)
 	result = result.replace("[SETBACK]", blackImage)
@@ -115,10 +127,11 @@ def write_talent_block(file, talent) :
 			"name" : talent,
 			"activation" : "?",
 			"ranked" : "?",
-			"description" : "Talent not found"
+			"description" : "Talent not found see the [[Talent List | Talent List]]",
+			"wiki" : talent
 		}
 
-	file.write("<td style=\"vertical-align: top; border: 2px solid #f9f9f9; border-radius: 10px; padding: 0;\">")
+	file.write("\t<td style=\"vertical-align: top; border: 2px solid #f9f9f9; border-radius: 10px; padding: 0;\">")
 	file.write("<div>")
 
 	# talent name
@@ -136,12 +149,12 @@ def write_talent_block(file, talent) :
 	file.write("</div>")
 
 	file.write("</div>")
-	file.write("</td>")
+	file.write("</td>\n")
 
 def write_talent_row(file, character, row) :
 	if "masterTalents" in character :
 		if str(row) in character["masterTalents"] :
-			file.write("<tr style=\"background-color: transparent;\">")
+			file.write("<tr style=\"background-color: transparent;\">\n")
 			section = character["masterTalents"][str(row)]
 			for rank in range(1, 6) :
 				if str(rank) in section :
@@ -149,7 +162,7 @@ def write_talent_row(file, character, row) :
 					if(len(talent) > 0) :
 						write_talent_block(file, talent)
 
-			file.write("</tr>")
+			file.write("</tr>\n")
 
 def write_talent_table(file, character) :
 
@@ -157,11 +170,11 @@ def write_talent_table(file, character) :
 	if "masterTalents" in character :
 		talentRows = len(character["masterTalents"].keys())
 
-	file.write("<table>")
-	file.write("<tr>")
+	file.write("<table>\n")
+	file.write("<tr>\n")
 	for rank in range(1, 6) :
-		file.write("<td style=\"width: 20%;\"><em>Rank " + str(rank) + "</em></td>")
-	file.write("</tr>")
+		file.write("\t<td style=\"width: 20%;\"><em>Rank " + str(rank) + "</em></td>\n")
+	file.write("</tr>\n")
 
 	for row in range(1, talentRows) :
 		write_talent_row(file, character, row)
@@ -270,6 +283,10 @@ def write_character(character) :
 	f.write("h3. Armor\n\n")
 	f.write(build_table_row("_Armor_", "_Soak_", "_Defense_", "_Encum_"))
 	write_armor_block(f, character)
+	f.write("\n\n")
+
+	write_vital_stats(f, character["description"])
+	f.write("\n\n")
 
 	f.close()
 
