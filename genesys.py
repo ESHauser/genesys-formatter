@@ -131,17 +131,17 @@ def write_talent_block(file, talent) :
 			"wiki" : talent
 		}
 
-	file.write("\t<td style=\"vertical-align: top; border: 2px solid #f9f9f9; border-radius: 10px; padding: 0;\">")
+	file.write("<td class=\"genesys-talent-block\">")
 	file.write("<div>")
 
 	# talent name
-	file.write("<div style=\"background-color: #f9f9f9; margin-bottom: 0;\">")
-	file.write("<p style=\"margin-bottom: 0; padding: 4px;\"><b>" + t["wiki"] + "</b></p>")
+	file.write("<div class=\"genesys-talent-header\">")
+	file.write("<p class=\"genesys-talent-header-link\"><b>" + t["wiki"] + "</b></p>")
 	file.write("</div>")
 
 	# talent details
-	file.write("<div style=\"background-color: #ffffff; margin-top: 0;\">")
-	file.write("<p style=\"padding: 4px;\">")
+	file.write("<div class=\"genesys-talent-detail\">")
+	file.write("<p class=\"genesys-talent-detail-text\">")
 	file.write("<b>Activation:</b> " + t["activation"] + "<br>")
 	file.write("<b>Ranked:</b> " + t["ranked"] + "<br>")
 	file.write(apply_tags(t["description"]))
@@ -154,7 +154,7 @@ def write_talent_block(file, talent) :
 def write_talent_row(file, character, row) :
 	if "masterTalents" in character :
 		if str(row) in character["masterTalents"] :
-			file.write("<tr style=\"background-color: transparent;\">\n")
+			file.write("<tr class=\"genesys-talent-row\">")
 			section = character["masterTalents"][str(row)]
 			for rank in range(1, 6) :
 				if str(rank) in section :
@@ -173,8 +173,8 @@ def write_talent_table(file, character) :
 	file.write("<table>\n")
 	file.write("<tr>\n")
 	for rank in range(1, 6) :
-		file.write("\t<td style=\"width: 20%;\"><em>Rank " + str(rank) + "</em></td>\n")
-	file.write("</tr>\n")
+		file.write("<td class=\"genesys-talent-column\"><em>Rank " + str(rank) + "</em></td>")
+	file.write("</tr>")
 
 	for row in range(1, talentRows) :
 		write_talent_row(file, character, row)
@@ -184,7 +184,7 @@ def write_talent_table(file, character) :
 def write_archetype_table(file, archetype) :
 	a = archetypes[archetype]
 	file.write("<table>")
-	file.write("<tr style=\"background-color: transparent;\">")
+	file.write("<tr class=\"genesys-talent-row\">")
 	for talent in a["StartingTalents"] :
 		write_talent_block(file, talent)
 	file.write("</tr>")	
