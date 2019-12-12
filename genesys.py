@@ -213,6 +213,12 @@ def calculate_defense(character) :
 
 	return 0
 
+def purify_name(unclean_name):
+	keepcharacters = (' ','.','_')
+	purified_name = "".join(c for c in unclean_name if c.isalnum() or c in keepcharacters).rstrip()
+	return purified_name
+
+
 def write_character(character) :
 	print(character["name"])
 	creationCharacteristics = character["creationCharacteristics"]
@@ -232,7 +238,7 @@ def write_character(character) :
 	soak = characteristics["Brawn"] + calculate_soak(character)
 	defense = calculate_defense(character)
 
-	f = open(character["name"] + ".txt", "w")
+	f = open(purify_name(character["name"]) + ".txt", "w")
 
 	f.write("h3. Archetype\n\n")
 	f.write(character["archetype"] + " " + character["career"] + "\n")
