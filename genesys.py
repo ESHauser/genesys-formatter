@@ -98,17 +98,6 @@ def write_skill_block(file, character, characteristics, category) :
 			file.write(row)
 
 def write_vital_stats(file, description):
-	#   "description": {
-    #         "age": "24",
-    #         "build": "Average",
-    #         "eyes": "Brown",
-    #         "gender": "Male",
-    #         "hair": "Blond",
-    #         "height": "5'11\"",
-    #         "image": "https://db4sgowjqfwig.cloudfront.net/images/5580171/glenn-roald.jpg",
-    #         "name": "New Character",
-    #         "playerName": "Enter Player Name"
-    #     },
 	d = description
 	file.write("h3. Vital Statistics\n\n")
 	file.write(build_table_row("_Age_", "_Gender_", "_Height", "_Build_", "_Eyes_", "_Hair_"))
