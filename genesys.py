@@ -100,7 +100,7 @@ def write_skill_block(file, character, characteristics, category) :
 def write_vital_stats(file, description):
 	d = description
 	file.write("h3. Vital Statistics\n\n")
-	file.write(build_table_row("_Age_", "_Gender_", "_Height", "_Build_", "_Eyes_", "_Hair_"))
+	file.write(build_table_row("_Age_", "_Gender_", "_Height_", "_Build_", "_Eyes_", "_Hair_"))
 	file.write(build_table_row(
 		d.get("age", "Unknown"),
 		d.get("gender", "Unknown"),
