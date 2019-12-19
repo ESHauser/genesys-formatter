@@ -68,5 +68,23 @@ archetypes = {
 		},
 		"WoundThreshold" : 10,
 		"StrainThreshold" : 10
+	},
+	"OlympicProdigy" : {
+		"StartingStats" : {
+			"Brawn" : 2,
+			"Agility" : 2,
+			"Intellect" : 3,
+			"Cunning" : 1,
+			"Willpower" : 2,
+			"Presence" : 2
+		},
+		"StartingSkills" : {
+			"Coordination" : 1
+		},
+		"StartingTalents" : {
+			"Brilliant!"
+		},
+		"WoundThreshold" : 9,
+		"StrainThreshold" : 11
 	}
 }

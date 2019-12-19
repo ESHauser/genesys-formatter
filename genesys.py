@@ -231,6 +231,26 @@ def purify_name(unclean_name):
 	purified_name = "".join(c for c in unclean_name if c.isalnum() or c in keepcharacters).rstrip()
 	return purified_name
 
+def get_adjustment(character, target) :
+	adjustment = 0
+
+	if "masterTalents" in character :
+		for row in character["masterTalents"] :
+			section = character["masterTalents"][str(row)]
+			for rank in range(1, 6) :
+				if str(rank) in section :
+					talent = section[str(rank)]
+					if(len(talent) > 0) :
+						if talent in talents :
+							details = talents[talent]
+							if "special" in details :
+								special = details["special"]
+								if "target" in special :
+									if special["target"] == target :
+										adjustment += special["value"]
+
+	return adjustment
+
 
 def write_character(character) :
 	print(character["name"])
@@ -246,8 +266,8 @@ def write_character(character) :
 		"Presence" : archetype["StartingStats"]["Presence"] + creationCharacteristics["Presence"]
 	}
 
-	wounds = archetype["WoundThreshold"] + characteristics["Brawn"]
-	strain = archetype["StrainThreshold"] + characteristics["Willpower"]
+	wounds = archetype["WoundThreshold"] + characteristics["Brawn"] + get_adjustment(character, "wounds")
+	strain = archetype["StrainThreshold"] + characteristics["Willpower"] + get_adjustment(character, "strain")
 	soak = characteristics["Brawn"] + calculate_soak(character)
 	defense = calculate_defense(character)
 
@@ -291,8 +311,9 @@ def write_character(character) :
 	write_armor_block(f, character)
 	f.write("\n\n")
 
-	write_vital_stats(f, character["description"])
-	f.write("\n\n")
+	if "description" in character :
+		write_vital_stats(f, character["description"])
+		f.write("\n\n")
 
 	f.close()
 

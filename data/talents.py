@@ -86,6 +86,10 @@ talents = {
         "ranked" : "Yes",
         "wiki" : "[[Grit]]",
         "description" : "Increase strain threshold by one for each rank of Grit.",
+        "special" : {
+            "target" : "strain",
+            "value" : 1
+        }
     },
     "HamstringShot" : {
         "name" : "Hamstring Shot",
@@ -205,7 +209,11 @@ talents = {
         "activation" : "Passive",
         "ranked" : "Yes",
         "wiki" : "[[Toughened]]",
-        "description" : "Each rank of Toughened increases character's Wound threshold by 2."
+        "description" : "Each rank of Toughened increases character's Wound threshold by 2.",
+        "special" : {
+            "target" : "wounds",
+            "value" : 2
+        }
     },
     "Unremarkable" : {
         "name" : "Unremarkable",
@@ -334,5 +342,21 @@ talents = {
         "ranked" : "Yes",
         "wiki" : "[[Side Step]]",
         "description" : "Once per round, suffer strain up to ranks in talent to increase difficulty of all ranged conmbat checks until end of next turn."
+    },
+    "Freerunning" : {
+        "name" : "Freerunning",
+        "tier" : "2",
+        "activation" : "Active (Incidental)",
+        "ranked" : "No",
+        "wiki" : "[[Freerunning]]",
+        "description" : "Suffer 1 strain when making a Move maneuver to move to any location within short range."
+    },
+    "MedicalSpecialist" : {
+        "name" : "Medical Specialist",
+        "tier" : "1",
+        "activation" : "Passive",
+        "ranked" : "Yes",
+        "wiki" : "[[Medical Specialist]]",
+        "description" : "Patients recover 1 additional wound per rank of Medical Specialist when they recover wounds from long term care."
     }
 }
