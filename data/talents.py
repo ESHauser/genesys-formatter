@@ -358,5 +358,149 @@ talents = {
         "ranked" : "Yes",
         "wiki" : "[[Medical Specialist]]",
         "description" : "Patients recover 1 additional wound per rank of Medical Specialist when they recover wounds from long term care."
+    },
+    "AllTerrainDriver" : {
+        "name" : "All-Terrain Driver",
+        "tier" : "1",
+        "activation" : "Passive",
+        "ranked": "No",
+        "wiki" : "[[All-Terrain Driver]]",
+        "description" : "Do not suffer usual penalties for driving through difficult terrain when using Driving."
+    },
+    "BadCop" : {
+        "name" : "Bad Cop",
+        "tier" : "1",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Bad Cop]]",
+        "description" : "Spend [ADVANTAGE][ADVANTAGE] from Deception or Coercion to upgrade ally's Social check by ranks in Bad Cop."
+    },
+    "BlackMarketContacts" : {
+        "name" : "Black Market Contacts",
+        "tier" : "1",
+        "activation" : "Active (Incidental)",
+        "ranked": "Yes",
+        "wiki" : "[[Black Market Contacts]]",
+        "description" : "Reduce rarity by 1 per talent rank when purchasing illegal goods.  Increase cost by 50% per reduction."
+    },
+    "Brace" : {
+        "name" : "Brace",
+        "tier" : "1",
+        "activation" : "Active (Manuever)",
+        "ranked": "Yes",
+        "wiki" : "[[Black Market Contacts]]",
+        "description" : "Remove [SETBACK] per rank from skill checks caused by disruptive physcial conditions."
+    },
+    "CallEm" : {
+        "name" : "Call 'Em",
+        "tier" : "1",
+        "activation" : "Passive",
+        "ranked": "No",
+        "wiki" : "[[Call-Em]]",
+        "description" : "Do not add [SETBACK] to combat checks due to use of the Aim manuever."
+    },
+    "ExtraAmmo" : {
+        "name" : "Extra Ammo",
+        "tier" : "1",
+        "activation" : "Passive",
+        "ranked": "No",
+        "wiki" : "[[Extra Ammo]]",
+        "description" : "Cannot run out of ammo due to [DESPAIR]."
+    },
+    "FamiliarSky" : {
+        "name" : "Familiar Sky",
+        "tier" : "1",
+        "activation" : "Active (Manuever)",
+        "ranked": "No",
+        "wiki" : "[[Familiar Sky]]",
+        "description" : "Once per session, make [DIFFICULTY][DIFFICULTY][DIFFICULTY] Knowledge check to reveal useful environment info."
+    },
+    "GoodCop" : {
+        "name" : "Good Cop",
+        "tier" : "1",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Good Cop]]",
+        "description" : "Spend [ADVANTAGE][ADVANTAGE] from Charm or Negotiation to upgrade ally's Social check by ranks in Bad Cop."
+    },
+    "HiddenStorage" : {
+        "name" : "Hidden Storage",
+        "tier" : "1",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Good Cop]]",
+        "description" : "Gain hidden storage in vehicles or equipment that holds items with encumberance equal to ranks in talent."
+    },
+    "KnowledgeSpecialization" : {
+        "name" : "Knowledge Specialization",
+        "tier" : "1",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Knowledge Specialization]]",
+        "description" : "Spend [TRIUMPH] on associated Knowledge skill check to gain additional [SUCCESS] equal to ranks in talent."
+    },
+    "MuseumWorthy" : {
+        "name" : "Museum Worthy",
+        "tier" : "1",
+        "activation" : "Active (Action)",
+        "ranked": "No",
+        "wiki" : "[[Museum Worthy]]",
+        "description" : "Once per session, make [DIFFICULTY][DIFFICULTY][DIFFICULTY] Knowledge check to get info on relic, ruin, or piece of history."
+    },
+    "MuseumWorthy" : {
+        "name" : "Museum Worthy",
+        "tier" : "1",
+        "activation" : "Active (Action)",
+        "ranked": "No",
+        "wiki" : "[[Museum Worthy]]",
+        "description" : "Once per session, make [DIFFICULTY][DIFFICULTY][DIFFICULTY] Knowledge check to get info on relic, ruin, or piece of history."
+    },
+    "Physician" : {
+        "name" : "Physician",
+        "tier" : "1",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Physician]]",
+        "description" : "When making Medicine check, target heals 1 additional strain per rank in talent."
+    },
+    "RedundantSystems" : {
+        "name" : "Redundant Systems",
+        "tier" : "1",
+        "activation" : "Active (Action)",
+        "ranked": "No",
+        "wiki" : "[[Redundant Systems]]",
+        "description" : "Once per session, make [DIFFICULTY] Mechanics check repair device using parts from another device."
+    },
+    "Reflect" : {
+        "name" : "Reflect",
+        "tier" : "1",
+        "activation" : "Active (Incidental, Out of Turn)",
+        "ranked": "Yes",
+        "wiki" : "[[Reflect]]",
+        "description" : "Suffer 3 strain to reduce Ranged damage by 2 plus ranks in talent."
+    },
+    "SignatureVehicle" : {
+        "name" : "Signature Vehicle",
+        "tier" : "1",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Signature Vehicle]]",
+        "description" : "Special - see talent description."
+    },
+    "SmoothTalker" : {
+        "name" : "Smooth Talker",
+        "tier" : "1",
+        "activation" : "Active (Incidental)",
+        "ranked": "Yes",
+        "wiki" : "[[Smooth Talker]]",
+        "description" : "Spend [TRIUMPH] on checks with selected skill to add [SUCCESS] equal to ranks in talent."
+    },
+    "SolidRepairs" : {
+        "name" : "Solid Repairs",
+        "tier" : "1",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Solid Repairs]]",
+        "description" : "Repair 1 additional hull trauma per rank in talent."
     }
 }
