@@ -1,0 +1,106 @@
+{
+    "characters": [
+        {
+            "name": "Binky",
+            "archetype": "AverageHuman",
+            "archetypeSpecialSkills": {
+                "Leadership": {
+                    "rank": 1
+                },
+                "Operating": {
+                    "rank": 1
+                }
+            },
+            "career": "FighterPilot",
+            "careerSkillsRank": [
+                "Cool",
+                "Piloting",
+                "RangedLight",
+                "Gunnery"
+            ],
+            "creationCharacteristics": {
+                "Agility": 2,
+                "Brawn": 0,
+                "Cunning": 1,
+                "Intellect": 1,
+                "Presence": 0,
+                "Willpower": 0
+            },
+            "equipmentArmor": {
+                "j5sfqldss8": {
+                    "carried": true,
+                    "equipped": true,
+                    "id": "lightBodyArmor"
+                }
+            },
+            "equipmentGear": {},
+            "equipmentWeapons": {
+                "p3t1ghfyaj": {
+                    "carried": true,
+                    "craftsmanship": "",
+                    "equipped": false,
+                    "id": "sniperRifle"
+                }
+            },
+            "masterMotivations": {
+                "Desire": {
+                    "description": "Your character craves power and authority over others. The character may pursue privilege, social status, or rank to achieve this goal.",
+                    "key": "Ambition"
+                },
+                "Fear": {
+                    "description": "Your character finds routine and stability comforting, and fears changes that could upend their day-to-day routine.",
+                    "key": "Change"
+                },
+                "Flaw": {
+                    "description": "Your character always seeks the path of least resistance and becomes intimidated by di cult or complex tasks.",
+                    "key": "Laziness"
+                },
+                "Strength": {
+                    "description": "Fear has no place in your character’s heart. They laugh at danger and gladly push themselves to confront what others flee from. Note that your character probably still has a Fear Motivation. It’s up to you whether that Fear is the one thing that can undo your character’s courage, or if this Strength pushes them to confront the source of their Fear no matter what.",
+                    "key": "Courageous"
+                }
+            },
+            "masterSkills": {
+                "Alchemy": {
+                    "rank": 0
+                },
+                "ComputersHacking": {
+                    "rank": 2
+                },
+                "Piloting": {
+                    "careerRank": 2
+                }
+            },
+            "masterTalents": {
+                "1": {
+                    "1": "Bullrush"
+                },
+                "2": {
+                    "1": "Duelist",
+                    "2": "KnackForIt"
+                },
+                "3": {
+                    "1": "DeepPockets",
+                    "2": "KnackForIt",
+                    "3": "BarrelRoll"
+                },
+                "4": {
+                    "1": "Grit",
+                    "2": "Grit",
+                    "3": ""
+                },
+                "5": {
+                    "1": "Toughened",
+                    "2": "Toughened"
+                },
+                "6": {
+                    "1": ""
+                }
+            },
+            "misc": {},
+            "setting": [
+                "Modern Day"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+h3. Archetype
+
+Intellectual Healer
+<table><tr class="genesys-talent-row"><td class="genesys-talent-block"><div><div class="genesys-talent-header"><p class="genesys-talent-header-link"><b>[[Brilliant!]]</b></p></div><div class="genesys-talent-detail"><p class="genesys-talent-detail-text"><b>Activation:</b> Passive<br><b>Ranked:</b> No<br>Once per session, spend Story Point to treat next skill check as if it had ranks equal to character's Intellect.</p></div></div></td>
+</tr></table>
+
+h3. Attributes
+
+|_Wounds_|_Strain_|_Soak Value_|_Defense_|
+|10|14|2|0|
+
+h3. Characteristics
+
+|_Brawn_|_Agility_|_Intellect_|_Cunning_|_Willpower_|_Presence_|
+|2|3|5|2|2|3|
+
+h3. Skills
+
+|_Skill_|_Career_|_Rank_|_Dice Pool_|
+|\4=.*General*|
+|[[Alchemy (INT)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Athletics (BR)]]||1|<img class="genesys-die-type-proficiency" /><img class="genesys-die-type-ability" />|
+|[[Computers (INT)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Cool (PR)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Coordination (AG)]]||2|<img class="genesys-die-type-proficiency" /><img class="genesys-die-type-proficiency" /><img class="genesys-die-type-ability" />|
+|[[Discipline (WILL)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Driving (AG)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Knowledge (INT)]]|Yes|2|<img class="genesys-die-type-proficiency" /><img class="genesys-die-type-proficiency" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Mechanics (INT)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Medicine (INT)]]|Yes|3|<img class="genesys-die-type-proficiency" /><img class="genesys-die-type-proficiency" /><img class="genesys-die-type-proficiency" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Operating (INT)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Perception (CUN)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Piloting (AG)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Resilience (BR)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Skulduggery (CUN)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Stealth (AG)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Streetwise (CUN)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Survival (CUN)]]|Yes|1|<img class="genesys-die-type-proficiency" /><img class="genesys-die-type-ability" />|
+|[[Vigilance (WILL)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|\4=.*Combat*|
+|[[Brawl (BR)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Gunnery (AG)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Melee (BR)]]|Yes|1|<img class="genesys-die-type-proficiency" /><img class="genesys-die-type-ability" />|
+|[[RangedHeavy (AG)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[RangedLight (AG)]]||1|<img class="genesys-die-type-proficiency" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|\4=.*Social*|
+|[[Charm (PR)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Coercion (WILL)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Deception (CUN)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Leadership (PR)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Negotiation (PR)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|\4=.*Magic*|
+|[[Arcana (INT)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Divine (WILL)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|[[Primal (CUN)]]||0|<img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+
+h3. Talents
+
+<table>
+<tr>
+<td class="genesys-talent-column"><em>Rank 1</em></td><td class="genesys-talent-column"><em>Rank 2</em></td><td class="genesys-talent-column"><em>Rank 3</em></td><td class="genesys-talent-column"><em>Rank 4</em></td><td class="genesys-talent-column"><em>Rank 5</em></td></tr><tr class="genesys-talent-row"><td class="genesys-talent-block"><div><div class="genesys-talent-header"><p class="genesys-talent-header-link"><b>[[Surgeon]]</b></p></div><div class="genesys-talent-detail"><p class="genesys-talent-detail-text"><b>Activation:</b> Passive<br><b>Ranked:</b> Yes<br>Heal additional wound per rank in Surgeon when using Medicine check to heal wounds.</p></div></div></td>
+</tr>
+<tr class="genesys-talent-row"><td class="genesys-talent-block"><div><div class="genesys-talent-header"><p class="genesys-talent-header-link"><b>[[Knack for It]]</b></p></div><div class="genesys-talent-detail"><p class="genesys-talent-detail-text"><b>Activation:</b> Passive<br><b>Ranked:</b> Yes<br>Remove <img class="genesys-die-type-setback" /><img class="genesys-die-type-setback" /> from all checks made with associated skill.</p></div></div></td>
+</tr>
+</table>
+
+h3. Weapons
+
+|_Weapon_|_Dam_|_Crit_|_Skill_|_Range_|_Encum_|_Qualities_|_Dice Pool_|
+|Light Pistol|5|4|RangedLight|Short|1||<img class="genesys-die-type-proficiency" /><img class="genesys-die-type-ability" /><img class="genesys-die-type-ability" />|
+|Knife|+1|3|Melee|Engaged|1||<img class="genesys-die-type-proficiency" /><img class="genesys-die-type-ability" />|
+
+
+h3. Armor
+
+|_Armor_|_Soak_|_Defense_|_Encum_|
+
+
+h3. Vital Statistics
+
+|_Age_|_Gender_|_Height|_Build_|_Eyes_|_Hair_|
+|25|Female|5'6"|Athletic|Blue|Black|
+
+
