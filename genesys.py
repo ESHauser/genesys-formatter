@@ -251,6 +251,24 @@ def get_adjustment(character, target) :
 
 	return adjustment
 
+def write_characteristic(file, characteristics, key, svg_name) :
+	file.write("<div style=\"position: relative; text-align: center; color: #000; padding: 0; margin: .15rem; width: 6rem; \">")
+	file.write("   <img src=" + svg_name + " style=\"width: 100%;\" />")
+	file.write("   <div style=\"top: 32%; left: 51%; position: absolute; transform: translate(-50%, -50%); flex: unset; font-size: 2.5rem; \">")
+	file.write(characteristics[key])
+	file.write("   </div>")
+	file.write("</div>")
+
+def write_characteristic_block(file, characteristics) :
+	file.write("<div style=\"display: flex; flex-wrap: wrap\">")
+	write_characteristic(file, characteristics, "Brawn", "https://db4sgowjqfwig.cloudfront.net/campaigns/233492/assets/1030928/Brawn.svg?1577417616")
+	write_characteristic(file, characteristics, "Agility", "https://db4sgowjqfwig.cloudfront.net/campaigns/233492/assets/1030929/Agility.svg?1577417616")
+	write_characteristic(file, characteristics, "Intellect", "https://db4sgowjqfwig.cloudfront.net/campaigns/233492/assets/1030931/Intellect.svg?1577417619")
+	write_characteristic(file, characteristics, "Cunning", "https://db4sgowjqfwig.cloudfront.net/campaigns/233492/assets/1030930/Cunning.svg?1577417618")
+	write_characteristic(file, characteristics, "Willpower", "https://db4sgowjqfwig.cloudfront.net/campaigns/233492/assets/1030933/Willpower.svg?1577417620")	
+	write_characteristic(file, characteristics, "Presence", "https://db4sgowjqfwig.cloudfront.net/campaigns/233492/assets/1030932/Presence.svg?1577417620")
+	file.write("</div>")
+
 
 def write_character(character) :
 	print(character["name"])
