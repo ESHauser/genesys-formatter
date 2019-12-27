@@ -9,7 +9,7 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "args": ["dave2.json"],
+            :"args": ["ivona.json"],
             "console": "integratedTerminal"
         }
     ]
