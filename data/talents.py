@@ -502,5 +502,153 @@ talents = {
         "ranked": "Yes",
         "wiki" : "[[Solid Repairs]]",
         "description" : "Repair 1 additional hull trauma per rank in talent."
+    },
+    "Barrage" : {
+        "name" : "Barrage",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Barrage]]",
+        "description" : "Add 1 damage per rank to 1 hit while using Ranged (Heavy) or Gunnery at long or extreme range."
+    },
+    "BeastWrangler" : {
+        "name" : "Beast Wrangler",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Beast Wrangler]]",
+        "description" : "Add [BOOST] per rank to checks to tame or wrangle creatures."
+    },
+    "Blackmail" : {
+        "name" : "Blackmail",
+        "tier" : "2",
+        "activation" : "Active (Incidental, Out of Turn)",
+        "ranked": "No",
+        "wiki" : "[[Blackmail]]",
+        "description" : "When NPC exceeds strain, may spend 1 Story Point to convince them to perform a single task instead."
+    },
+    "Blooded" : {
+        "name" : "Blooded",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Blooded]]",
+        "description" : "Add [BOOST] per rank to all checks to resist or recover from poison, venom, or toxin.  Reduce ongoing effect duration by 1 per rank."
+    },
+    "BodyGuard" : {
+        "name" : "Body Guard",
+        "tier" : "2",
+        "activation" : "Active (Manuever)",
+        "ranked": "Yes",
+        "wiki" : "[[Body Guard]]",
+        "description" : "Suffer strain up to ranks.  Until beginning of next turn, upgrade difficulty of combat checks againt subject by equal amount."
+    },
+    "Burly" : {
+        "name" : "Burly",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Burly]]",
+        "description" : "Reduce weapon's Cumbersome and Encumberance ratings by ranks to a minimum of 1."
+    },
+    "Command" : {
+        "name" : "Command",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Command]]",
+        "description" : "Add [BOOST] per rank when making Leadership checks.  Affected targets add [BOOST] to Discipline for next 24 hours."
+    },
+    "Confidence" : {
+        "name" : "Confidence",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Confidence]]",
+        "description" : "Decrease difficulty of Discipline checks to avoid fear by 1 per rank to minimum of Easy ([DIFFICULTY])."
+    },
+    "CuttingQuestion" : {
+        "name" : "Cutting Question",
+        "tier" : "2",
+        "activation" : "Active (Incidental)",
+        "ranked": "No",
+        "wiki" : "[[Cutting Question]]",
+        "description" : "Once per encounter when making Coercion check, use Deception skill instead."
+    },
+    "DebilitatingShot" : {
+        "name" : "Debilitating Shot",
+        "tier" : "2",
+        "activation" : "Active (Incidental)",
+        "ranked": "No",
+        "wiki" : "[[Debilitating Shot]]",
+        "description" : "On successful attack with vehicle weapon, spend [ADVANTAGE][ADVANTAGE] to reduce taget max speed by 1 until end of next round."
+    },
+    "DeceptiveTaunt" : {
+        "name" : "Deceptive Taunt",
+        "tier" : "2",
+        "activation" : "Active (Action)",
+        "ranked": "No",
+        "wiki" : "[[Deceptive Taunt]]",
+        "description" : "Once per session, make opposed Deception check.  If successful, one adversary must attack the character on its next turn."
+    },
+    "Disorient" : {
+        "name" : "Disorient",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Disorient]]",
+        "description" : "After hitting with a combat check, spend [ADVANTAGE][ADVANTAGE] to disorient target for rounds equal to ranks."
+    },
+    "DistractingBehavior" : {
+        "name" : "Distracting Behavior",
+        "tier" : "2",
+        "activation" : "Active (Manuever)",
+        "ranked": "Yes",
+        "wiki" : "[[Distracting Behavior]]",
+        "description" : "Suffer strain up to ranks in Cunning.  Equal number of NPCs suffer [THREAT] on checks.  Range increases with ranks."
+    },
+    "DynamicFire" : {
+        "name" : "Dynamic Fire",
+        "tier" : "2",
+        "activation" : "Active (Incidental)",
+        "ranked": "No",
+        "wiki" : "[[Dynamic Fire]]",
+        "description" : "When making ranged attack while engaged, suffer 2 strain to reduce range modifier by 1."
+    },
+    "FancyPaintJob" : {
+        "name" : "Fancy Paint Job",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "No",
+        "wiki" : "[[Fancy Paint Job]]",
+        "description" : "Upgrade Charm, Deception, and Negotiation checks made in presence of Signature Vehicle."
+    },
+    "Fearsome" : {
+        "name" : "Fearsome",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Fearsome]]",
+        "description" : "When adversary becomes engaged, adversary makes fear check with difficulty equal to ranks."
+    },
+    "FineTuning" : {
+        "name" : "Fine Tuning",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Fine Tuning]]",
+        "description" : "When reducing system strain on vehicle, reduce 1 additional strain per rank."
+    },
+    "Finesse" : {
+        "name" : "Finesse",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "No",
+        "wiki" : "[[Finesse]]",
+        "description" : "May use Agility instead of Brawn for Brawl and Melee checks.",
+        "special" : {
+            "target" : "Brawl, Melee",
+            "characteristic" : "Agility"
+        }
     }
 }

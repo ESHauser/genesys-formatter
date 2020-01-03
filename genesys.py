@@ -269,6 +269,21 @@ def write_characteristic_block(file, characteristics) :
 	write_characteristic(file, characteristics, "Presence", "https://db4sgowjqfwig.cloudfront.net/campaigns/233492/assets/1030932/Presence.svg?1577417620")
 	file.write("</div>\n\n")
 
+def apply_talent_rules(character) :
+	if "masterTalents" in character :
+		for row in character["masterTalents"] :
+			section = character["masterTalents"][str(row)]
+			for rank in range(1, 6) :
+				if str(rank) in section :
+					talent = section[str(rank)]
+					if(len(talent) > 0) :
+						if talent in talents :
+							details = talents[talent]
+							if "special" in details :
+								special = details["special"]
+								if "target" in special :
+									for subtarget in special["target"].split(',') :
+										skills[subtarget]["characteristic"] = special["characteristic"]
 
 def write_character(character) :
 	print(character["name"])
