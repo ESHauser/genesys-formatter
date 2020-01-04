@@ -47,5 +47,5 @@ def getFlattenedSkills():
                 skills[z] = {}
                 skills[z]["category"] = y
                 skills[z]["characteristic"] = x
-                skills[z]["wiki"] = "[[" + z + " (" + abbr[x] + ")]]"
+                skills[z]["wiki"] = "[[" + z + " (" + abbr[x] + ") | " + z + "]]"
     return skills

@@ -647,8 +647,120 @@ talents = {
         "wiki" : "[[Finesse]]",
         "description" : "May use Agility instead of Brawn for Brawl and Melee checks.",
         "special" : {
-            "target" : "Brawl, Melee",
+            "target" : "Brawl,Melee",
             "characteristic" : "Agility"
         }
+    },
+    "GoWithout" : {
+        "name" : "Go Without",
+        "tier" : "2",
+        "activation" : "Active (Incidental)",
+        "ranked": "No",
+        "wiki" : "[[Go Without]]",
+        "description" : "Once per session, count as having the right tools for the job when performing the next skill check this turn."
+    },
+    "Grapple" : {
+        "name" : "Grapple",
+        "tier" : "2",
+        "activation" : "Active (Manuever)",
+        "ranked": "No",
+        "wiki" : "[[Grapple]]",
+        "description" : "Once per round, enemies must spend two manuevers to move from engaged to short range of character."
+    },
+    "HardHeaded" : {
+        "name" : "Hard Headed",
+        "tier" : "2",
+        "activation" : "Active (Action)",
+        "ranked": "Yes",
+        "wiki" : "[[Hard Headed]]",
+        "description" : "When staggered or diroriented, make [DIFFICULTY][DIFFICULTY][DIFFICULTY][DIFFICULTY] Discipline check to remove status.  Reduce difficulty per rank."
+    },
+    "HoldTogether" : {
+        "name" : "Hold Together",
+        "tier" : "2",
+        "activation" : "Active (Incidental)",
+        "ranked": "No",
+        "wiki" : "[[Hold Together]]",
+        "description" : "Spend 1 Story Point after vehicle takes damage to convert damage to system strain."
+    },
+    "Hunter" : {
+        "name" : "Hunter",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Hunter]]",
+        "description" : "Add [BOOST] per rank to checks interacting with beasts.  Add +10 to Crit Injury vs beasts per rank."
+    },
+    "HuntersQuarry" : {
+        "name" : "Hunter's Quarry",
+        "tier" : "2",
+        "activation" : "Active (Action)",
+        "ranked": "No",
+        "wiki" : "[[Hunters Quarry]]",
+        "description" : "Make [DIFFICULTY][DIFFICULTY][DIFFICULTY] Survival check to upgrade all attacks vs target within long range to end of next turn."
+    },
+    "Knockdown" : {
+        "name" : "Knockdown",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "No",
+        "wiki" : "[[Knockdown]]",
+        "description" : "After hitting with melee attack, spend [ADVANTAGE] to knock the target prone."
+    },
+    "Know-It-All" : {
+        "name" : "Know-It-All",
+        "tier" : "2",
+        "activation" : "Active (Incidental)",
+        "ranked": "No",
+        "wiki" : "[[Know-It-All]]",
+        "description" : "Once per session, perfectly recall an inportant fact previously learned as if a Story Point had been spent."
+    },
+    "KnockSchematic" : {
+        "name" : "Know Schematic",
+        "tier" : "2",
+        "activation" : "Active (Manuever)",
+        "ranked": "No",
+        "wiki" : "[[Know Schematic]]",
+        "description" : "Once per session make [DIFFICULTY][DIFFICULTY][DIFFICULTY] Knowledge check.  Success grants familiarity with building or ship's design."
+    },
+    "Loom" : {
+        "name" : "Loom",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "No",
+        "wiki" : "[[Loom]]",
+        "description" : "Add [ADVANTAGE] per rank in Coercion to ally's successful Charm, Deception, or Negotiation check."
+    },
+    "MultipleOpponents" : {
+        "name" : "Multiple Opponents",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "No",
+        "wiki" : "[[Multiple Opponents]]",
+        "description" : "Add [BOOST] to Brawl and Melee checks when engaged with multiple opponents."
+    },
+    "MysticTheurge" : {
+        "name" : "Mystic Theurge",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "No",
+        "wiki" : "[[Mystic Theurge]]",
+        "description" : "Choose 1 magic skill to become a career skill.  Skill can be used once per encounter."
+    },
+    "OverstockedAmmo" : {
+        "name" : "Overstocked Ammo",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Overstocked Ammo]]",
+        "description" : "Increase value of Limited Ammo quality on Signature Vehicle mounted weapon by 1 per rank."
+    },
+    "PhysicalTraining" : {
+        "name" : "Physical Training",
+        "tier" : "2",
+        "activation" : "Passive",
+        "ranked": "Yes",
+        "wiki" : "[[Physical Training]]",
+        "description" : "Add [BOOST] per rank to Athletics and Resilience."
     }
 }

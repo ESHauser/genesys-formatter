@@ -283,7 +283,8 @@ def apply_talent_rules(character) :
 								special = details["special"]
 								if "target" in special :
 									for subtarget in special["target"].split(',') :
-										skills[subtarget]["characteristic"] = special["characteristic"]
+										if subtarget in skills :
+											skills[subtarget]["characteristic"] = special["characteristic"]
 
 def write_character(character) :
 	print(character["name"])
@@ -303,6 +304,8 @@ def write_character(character) :
 	strain = archetype["StrainThreshold"] + characteristics["Willpower"] + get_adjustment(character, "strain")
 	soak = characteristics["Brawn"] + calculate_soak(character)
 	defense = calculate_defense(character)
+
+	apply_talent_rules(character)
 
 	f = open(purify_name(character["name"]) + ".txt", "w")
 
