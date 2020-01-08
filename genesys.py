@@ -5,6 +5,7 @@ import data.weapons
 import data.armor
 import data.archetypes
 import data.talents
+import data.careers
 
 yellowImage = "<img class=\"genesys-die-type-proficiency\" />"
 greenImage = "<img class=\"genesys-die-type-ability\" />"
@@ -20,6 +21,7 @@ weapons = data.weapons.weapons
 armor = data.armor.armor
 archetypes = data.archetypes.archetypes
 talents = data.talents.talents
+careers = data.careers.careers
 
 def build_table_row(*args, **kwargs):
 	str_args = [""] + [str(x) for x in args] + [""]
@@ -83,18 +85,19 @@ def build_dice_pool(yellow, green, blue, black) :
 	return result
 
 def write_skill_block(file, character, characteristics, category) :
+	career = careers[character["career"]]
 	keys = sorted(skills.keys())
 
 	for key in keys :
 		skill = skills[key]
-		career = ""
-		if key in character["careerSkillsRank"] :
-			career = "Yes"
+		isCareer = ""
+		if key in career["careerSkills"] :
+			isCareer = "Yes"
 		ranks, yellow, green = calculate_skill(character, characteristics, key)
 		wiki = skill["wiki"]
 
 		if(skill["category"] == category) :
-			row = build_table_row(wiki, career, ranks, build_dice_pool(yellow, green, 0, 0))
+			row = build_table_row(wiki, isCareer, ranks, build_dice_pool(yellow, green, 0, 0))
 			file.write(row)
 
 def write_vital_stats(file, description):
@@ -310,7 +313,7 @@ def write_character(character) :
 	f = open(purify_name(character["name"]) + ".txt", "w")
 
 	f.write("h3. Archetype\n\n")
-	f.write(character["archetype"] + " " + character["career"] + "\n")
+	f.write(character["archetype"] + " " + careers[character["career"]]["name"] + "\n")
 	write_archetype_table(f, character["archetype"])
 
 	f.write("h3. Attributes\n\n")
@@ -319,9 +322,6 @@ def write_character(character) :
 
 	f.write("h3. Characteristics\n\n")
 	write_characteristic_block(f, characteristics)
-	# f.write(build_table_row("_Brawn_", "_Agility_", "_Intellect_", "_Cunning_", "_Willpower_", "_Presence_"))
-	#f.write(build_table_row(characteristics["Brawn"], characteristics["Agility"], characteristics["Intellect"], 
-	#			characteristics["Cunning"], characteristics["Willpower"], characteristics["Presence"], postfix="\n"))
 
 	f.write("h3. Skills\n\n")
 	f.write(build_table_row("_Skill_", "_Career_", "_Rank_", "_Dice Pool_"))
