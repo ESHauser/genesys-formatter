@@ -17,7 +17,7 @@ careers = {
             "Cool", "Descipline", "Knowledge", "Medicine", "Melee", "Resilience", "Survival", "Vigilance"
         }
     },
-    "Leadeer" : {
+    "Leader" : {
         "name" : "Leader",
         "careerSkills" : {
             "Charm", "Coercion", "Cool" ,"Discipline", "Leadership", "Melee", "Negotiation", "Perception"
