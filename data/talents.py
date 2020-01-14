@@ -147,7 +147,7 @@ talents = {
         "wiki" : "[[Parry]]",
         "description" : "Suffer 3 strain to reduce pre-soak melee damage by 2 plus ranks in Parry."
     },
-    "ProperUpbrinding" : {
+    "ProperUpbringing" : {
         "name" : "Proper Upbringing",
         "tier" : "1",
         "activation" : "Active (Incidental)",

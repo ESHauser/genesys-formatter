@@ -2,3 +2,4 @@ __pycache__
 joe.json
 Joe.txt
 *.pyc
+.DS_Store
