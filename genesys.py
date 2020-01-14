@@ -112,6 +112,11 @@ def write_vital_stats(file, description):
 		d.get("eyes", "Unknown"),
 		d.get("hair", "Unknown")))
 
+def write_notes_block(file, description) :
+	if "notes" in description :
+		file.write("h3. Notes\n\n")
+		file.write(description["notes"] + "\n\n")
+
 def apply_tags(text) :
 	result = text.replace("[BOOST]", blueImage)
 	result = result.replace("[SETBACK]", blackImage)
@@ -272,6 +277,18 @@ def write_characteristic_block(file, characteristics) :
 	write_characteristic(file, characteristics, "Presence", "https://db4sgowjqfwig.cloudfront.net/campaigns/233492/assets/1030932/Presence.svg?1577417620")
 	file.write("</div>\n\n")
 
+def write_motivations(file, motivations) :
+	strength = motivations["Strength"]
+	flaw = motivations["Flaw"]
+	desire = motivations["Desire"]
+	fear = motivations["Fear"]
+
+	file.write("h3. Motivations\n\n")
+	file.write("|Strength: " + strength["key"] + "|" + strength["description"] + "|\n")
+	file.write("|Flaw: " + flaw["key"] + "|" + flaw["description"] + "|\n")
+	file.write("|Desire: " + desire["key"] + "|" + desire["description"] + "|\n")
+	file.write("|Fear: " + fear["key"] + "|" + fear["description"] + "|\n")
+
 def apply_talent_rules(character) :
 	if "masterTalents" in character :
 		for row in character["masterTalents"] :
@@ -312,6 +329,10 @@ def write_character(character) :
 
 	f = open(purify_name(character["name"]) + ".txt", "w")
 
+	if "description" in character :
+		write_vital_stats(f, character["description"])
+		f.write("\n\n")
+
 	f.write("h3. Archetype\n\n")
 	f.write(character["archetype"] + " " + careers[character["career"]]["name"] + "\n")
 	write_archetype_table(f, character["archetype"])
@@ -348,9 +369,11 @@ def write_character(character) :
 	write_armor_block(f, character)
 	f.write("\n\n")
 
-	if "description" in character :
-		write_vital_stats(f, character["description"])
+	if "masterMotivations" in character :
+		write_motivations(f, character["masterMotivations"])
 		f.write("\n\n")
+
+	write_notes_block(f, character["description"])
 
 	f.close()
 
