@@ -115,7 +115,7 @@ def write_vital_stats(file, description):
 def write_notes_block(file, description) :
 	if "notes" in description :
 		file.write("h3. Notes\n\n")
-		file.write(description["notes"] + "\n\n")
+		file.write(sanitize_string(description["notes"]) + "\n\n")
 
 def apply_tags(text) :
 	result = text.replace("[BOOST]", blueImage)
@@ -234,6 +234,10 @@ def calculate_defense(character) :
 
 	return 0
 
+def sanitize_string(original) :
+	sanitized = original.replace("'", "\'")
+	return sanitized
+
 def purify_name(unclean_name):
 	keepcharacters = (' ','.','_')
 	purified_name = "".join(c for c in unclean_name if c.isalnum() or c in keepcharacters).rstrip()
@@ -284,10 +288,10 @@ def write_motivations(file, motivations) :
 	fear = motivations["Fear"]
 
 	file.write("h3. Motivations\n\n")
-	file.write("|Strength: " + strength["key"] + "|" + strength["description"] + "|\n")
-	file.write("|Flaw: " + flaw["key"] + "|" + flaw["description"] + "|\n")
-	file.write("|Desire: " + desire["key"] + "|" + desire["description"] + "|\n")
-	file.write("|Fear: " + fear["key"] + "|" + fear["description"] + "|\n")
+	file.write("|Strength: " + strength["key"] + "|" + sanitize_string(strength["description"]) + "|\n")
+	file.write("|Flaw: " + flaw["key"] + "|" + sanitize_string(flaw["description"]) + "|\n")
+	file.write("|Desire: " + desire["key"] + "|" + sanitize_string(desire["description"]) + "|\n")
+	file.write("|Fear: " + fear["key"] + "|" + sanitize_string(fear["description"]) + "|\n")
 
 def apply_talent_rules(character) :
 	if "masterTalents" in character :
