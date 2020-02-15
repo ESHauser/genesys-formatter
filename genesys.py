@@ -159,35 +159,41 @@ def write_talent_block(file, talent) :
 	file.write("</div>")
 	file.write("</td>\n")
 
-def write_talent_row(file, character, row) :
+def write_flat_talent_table(file, character) :
 	if "masterTalents" in character :
-		if str(row) in character["masterTalents"] :
-			file.write("<tr class=\"genesys-talent-row\">")
-			section = character["masterTalents"][str(row)]
-			for rank in range(1, 6) :
-				if str(rank) in section :
-					talent = section[str(rank)]
-					if(len(talent) > 0) :
-						write_talent_block(file, talent)
-
-			file.write("</tr>\n")
-
-def write_talent_table(file, character) :
-
-	talentRows = 0
-	if "masterTalents" in character :
+		flatTalentList = []
 		talentRows = len(character["masterTalents"].keys())
+		for row in range(1, talentRows) :
+			if str(row) in character["masterTalents"] :
+				section = character["masterTalents"][str(row)]
+				for rank in range(1, 6) :
+					if str(rank) in section :
+						talent = section[str(rank)]
+						if(len(talent) > 0) :
+							flatTalentList.append({
+								"name" : talent,
+								"tier" : str(rank)
+							})
 
-	file.write("<table>\n")
-	file.write("<tr>\n")
-	for rank in range(1, 6) :
-		file.write("<td class=\"genesys-talent-column\"><em>Rank " + str(rank) + "</em></td>")
-	file.write("</tr>")
+		file.write("|_Talent_|_Tier_|_Activation_|_Description_|\n")
+		for i in sorted(flatTalentList, key=lambda x: x["name"]) :
+			talent = i["name"]
+			tier = i["tier"]
 
-	for row in range(1, talentRows) :
-		write_talent_row(file, character, row)
+			if talent in talents :
+				t = talents[talent]
+			else :
+				t = {
+					"name" : talent,
+					"activation" : "?",
+					"ranked" : "?",
+					"description" : "Talent not found see the [[Talent List | Talent List]]",
+					"wiki" : talent
+				}
 
-	file.write("</table>\n\n")
+			file.write("|" + t["wiki"] + "|" + tier + "|" + t["activation"] + "|" + t["description"] + "|\n")
+
+		file.write("\n\n")
 
 def write_archetype_table(file, archetype) :
 	a = archetypes[archetype]
@@ -361,7 +367,8 @@ def write_character(character) :
 	f.write("\n")
 
 	f.write("h3. Talents\n\n")
-	write_talent_table(f, character)
+	# write_talent_table(f, character)
+	write_flat_talent_table(f, character)
 
 	f.write("h3. Weapons\n\n")
 	f.write(build_table_row("_Weapon_", "_Dam_", "_Crit_", "_Skill_", "_Range_", "_Encum_", "_Qualities_", "_Dice Pool_"))
