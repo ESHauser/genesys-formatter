@@ -1,5 +1,5 @@
 __pycache__
-joe.json
-Joe.txt
+*.json
+*.txt
 *.pyc
 .DS_Store
