@@ -261,7 +261,7 @@ talents = {
         "activation" : "Active (Incidental)",
         "ranked" : "Yes",
         "wiki" : "[[Daring Aviator]]",
-        "description" : "Before driving or pilot check, add [SETBACK] to result to add equal number of [SUCCESS] up to ranks in this talent."
+        "description" : "Before driving or pilot check, add [THREAT] to result to add equal number of [SUCCESS] up to ranks in this talent."
     },
     "DefensiveStance" : {
         "name" : "Defensive Stance",
