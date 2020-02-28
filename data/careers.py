@@ -53,6 +53,12 @@ careers = {
             "Cool", "Driving", "Gunnery", "Mechanics", "Perception", "Piloting", "RangedLight", "Vigilance"
         }
     },
+    "Hacker" : {
+        "name" : "Hacker",
+        "careerSkills" : {
+            "Computers", "Discipline", "Knowledge", "Mechanics", "Perception", "Piloting", "Streetwise", "Vigilance"
+        }
+    },
     "OlympicProdigy" : {
         "name" : "Olympic Prodigy",
         "careerSkills" : {

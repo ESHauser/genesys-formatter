@@ -1,5 +1,6 @@
 import sys
 import json
+import re
 import data.skills
 import data.weapons
 import data.armor
@@ -241,7 +242,7 @@ def calculate_defense(character) :
 	return 0
 
 def sanitize_string(original) :
-	sanitized = original.replace("'", "\'")
+	sanitized = re.sub(r'[^\x00-\x7F]+',' ', original.replace("'", "\'"))
 	return sanitized
 
 def purify_name(unclean_name):
